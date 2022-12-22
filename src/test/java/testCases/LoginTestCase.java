@@ -1,5 +1,7 @@
 package testCases;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -12,7 +14,7 @@ import elementRepository.LoginPage;
 public class LoginTestCase extends BaseClass{
  
 	LoginPage lP;
-	
+	List<String>loginList;
 	@Test
 	public void verifyLoggedUsers() {
 		lP=new LoginPage(driver);
@@ -62,5 +64,14 @@ public class LoginTestCase extends BaseClass{
 		boolean expectedStatus=false;
 		boolean actualStatus=lP.rememberMeCheckBoxValidation();
 	    Assert.assertEquals(actualStatus,expectedStatus,Constant.CHECKBOX_ERROR);
+	}
+	
+	@Test
+	public void excelReadLogin() {
+		lP=new LoginPage(driver);
+		loginList=lP.getLoginDetails();
+		System.out.println(loginList);
+		lP.excelSteps(loginList.get(0), loginList.get(1)); 
+		
 	}
 }

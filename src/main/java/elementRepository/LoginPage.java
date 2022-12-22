@@ -1,16 +1,22 @@
 package elementRepository;
 
+import java.util.List;
+
+import org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.ExcelRead;
 import utilities.GeneralUtilities;
 //import org.testng.Assert;
 
 public class LoginPage {
 	WebDriver driver;
 	GeneralUtilities gu=new GeneralUtilities();
+	ExcelRead er;
+	
 	public LoginPage(WebDriver driver) {
 		
 		this.driver=driver;
@@ -70,6 +76,15 @@ public class LoginPage {
 		clickSignin();
 	}
 
-
+    public List<String> getLoginDetails(){
+    	er=new ExcelRead();
+    	List<String>exceList= er.readDataFromExcel("Sheet1");
+    	return exceList;
+    } 
+    
+    public void excelSteps(String un,String pass) {
+    	gu.sendText(userName, un);
+    	gu.sendText(password, pass);
+    }
 
 }
