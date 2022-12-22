@@ -1,0 +1,18 @@
+<suite name="MyFirstSuite">
+<test name="MyTestSuite">
+<parameter name="Browser" value="chrome">
+</parameter>
+<groups>
+<run>
+<include name="SmokeTest">
+</include>
+</run>
+</groups>
+
+<classes>
+<class name="testCases.MobileSliderTestCases"/>
+<class name="testCases.ManageDeliveryBoyTestCases">
+</class>
+</classes>
+</test>
+</suite>

@@ -1,0 +1,11 @@
+utilities\Screenshotcapture.class
+elementRepository\LoginPage.class
+elementRepository\ManageDeliveryBoy.class
+elementRepository\MobileSlider.class
+utilities\FileHandling.class
+elementRepository\ManageOrders.class
+utilities\Synchronisation.class
+elementRepository\PushNotifications.class
+utilities\GeneralUtilities.class
+elementRepository\ManageProduct.class
+elementRepository\Dashboard.class

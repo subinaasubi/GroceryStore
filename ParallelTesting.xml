@@ -1,0 +1,8 @@
+<suite name="parallel Testing">
+<test name="MyFirstTest" parallel="methods" thread-count="2">
+<parameter name="Browser" value="chrome"> </parameter>
+<classes>
+<class name="testCases.ManageDeliveryBoyTestCases"/>
+</classes>
+</test>
+</suite>
