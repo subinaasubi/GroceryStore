@@ -3,10 +3,10 @@
 <test name="MyFirstTest">
 <parameter name="Browser" value="chrome"> </parameter>
 <classes>
-<class name="testCases.LoginTestCase">
+<class name="testCases.AdminUsersTestCases">
 <methods>
 <!-- if we want to include use include tag -->
-<include name="excelReadLogin"></include>
+<include name="validateAdminProfileWithFaker"></include>
 </methods>
 </class>
 </classes>

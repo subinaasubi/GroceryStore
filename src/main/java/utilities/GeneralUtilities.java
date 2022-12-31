@@ -8,7 +8,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import com.github.javafaker.Faker;
+
 public class GeneralUtilities {
+	static Faker faker;
 	
 	public String getElementText(WebElement element) {
 		String text=element.getText();
@@ -99,7 +102,7 @@ public class GeneralUtilities {
 
 	}
 	
-public String FirstSelectedOption(WebElement element) {
+public String getFirstSelectedOption(WebElement element) {
 		Select select1 = new Select(element);
 		String firstoption = select1.getFirstSelectedOption().getText();
 		return (firstoption);
@@ -111,5 +114,10 @@ public int sizeOfDropDown(WebElement element) {
 	return listOfElements.size();
 }
 
+public void randomUserNames(WebElement element) {
+	faker=new Faker();
+	String userName=faker.name().username();
+	element.sendKeys(userName);
+}
 	
 }

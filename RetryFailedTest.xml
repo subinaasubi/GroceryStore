@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="RetrySuite">
+<listeners>
+<listener class-name="testCases.AnnotationTransformer"></listener>
+</listeners>
+	<test name="MyRetryTest">
+		<parameter name="Browser" value="chrome"></parameter>
+		<classes>
+			<class name="testCases.ManageProductTestCases">
+			</class>
+		</classes>
+	</test>
+</suite>

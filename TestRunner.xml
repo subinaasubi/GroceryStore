@@ -3,7 +3,7 @@
 <test name="MyFirstTest">
 <parameter name="Browser" value="chrome"> </parameter>
 <classes>
-<class name="testCases.MobileSliderTestCases">
+<class name="testCases.AdminUsersTestCases">
 </class>
 </classes>
 </test>

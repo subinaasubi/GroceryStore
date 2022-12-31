@@ -3,7 +3,7 @@ package constants;
 public class Constant {
 	public static final String expectedProfileName="Admin";
 	public static final String loginError="Invalid Login";
-	public static final String admin_Clr_Ppty="rgba(255,255,255,0.75)";
+	public static final String admin_Clr_Ppty="rgba(255, 255, 255, 0.75)";
 	public static final String STYLE_ERROR="Element color is not as expected";
 	
 	public static final String expectedManageExpense="Manage Expense";
@@ -40,4 +40,11 @@ public class Constant {
     public static final String SIZE_ERROR="Element Size is not as expected";
     
     public static final String ORDERID_ERROR="Order Id is not as expected";
+    
+    public static final String DROPDOWN_ERROR="Selected Drop down element is not as expected ";
+    
+    public static final String COUNT_ERROR="Count is not as expected";
+    
+    public static final String EXPECTED_USER_ADMIN_ALERT ="×\n"+ "Alert!\n"+ "User Created Successfully";
+
 }
