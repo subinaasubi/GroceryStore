@@ -1,11 +1,17 @@
 utilities\Screenshotcapture.class
 elementRepository\LoginPage.class
+elementRepository\ManageLocation.class
 elementRepository\ManageDeliveryBoy.class
 elementRepository\MobileSlider.class
+utilities\ExtendReportUtility.class
+utilities\CalenderUtility.class
 utilities\FileHandling.class
 elementRepository\ManageOrders.class
+utilities\ExcelRead.class
 utilities\Synchronisation.class
 elementRepository\PushNotifications.class
+utilities\RandomDataGenerationUtility.class
+elementRepository\AdminUsers.class
 utilities\GeneralUtilities.class
 elementRepository\ManageProduct.class
 elementRepository\Dashboard.class
