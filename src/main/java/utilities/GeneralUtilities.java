@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import com.github.javafaker.Faker;
 
 public class GeneralUtilities {
-	static Faker faker;
+	//static Faker faker;
 	
 	public String getElementText(WebElement element) {
 		String text=element.getText();
@@ -114,10 +114,10 @@ public int sizeOfDropDown(WebElement element) {
 	return listOfElements.size();
 }
 
-public void randomUserNames(WebElement element) {
+/*public void randomUserNames(WebElement element) {
 	faker=new Faker();
 	String userName=faker.name().username();
 	element.sendKeys(userName);
-}
+}*/
 	
 }

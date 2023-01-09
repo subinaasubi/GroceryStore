@@ -20,8 +20,7 @@ public class ManageOrdersTestCases extends BaseClass{
 	  	mo=new ManageOrders(driver);
 	  	
 	  	boolean actualComparisonResult=mo.compareAllValuesOfColumn();
-	  	//System.out.println(actualComparisonResult);
-	  	Assert.assertTrue(actualComparisonResult);
+	   	Assert.assertTrue(actualComparisonResult);
   }
   
   @Test(priority = 2,description = "status drop down size")
@@ -42,10 +41,12 @@ public class ManageOrdersTestCases extends BaseClass{
 	  	mo=new ManageOrders(driver);
 	  	
 	  	String actualOrderId=(String) mo.searchUsingOrderId();
+	  	String expectedOrderId=mo.firstOrder;
 	  	SoftAssert softAssert=new SoftAssert();
-	  	softAssert.assertEquals(actualOrderId, "363",Constant.ORDERID_ERROR);
+	  	softAssert.assertEquals(actualOrderId, expectedOrderId,Constant.ORDERID_ERROR);
 	  	String actualPaymntMode=mo.getPaymentModeFromTable();
-	  	softAssert.assertEquals(actualPaymntMode, "COD",Constant.textError);
+	  	String expectedPaymntMode=mo.paymntM;
+	  	softAssert.assertEquals(actualPaymntMode, expectedPaymntMode,Constant.textError);
 	  	softAssert.assertAll();
   }
 }

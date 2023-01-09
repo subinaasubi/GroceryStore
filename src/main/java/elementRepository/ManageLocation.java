@@ -14,6 +14,8 @@ import utilities.GeneralUtilities;
 
 public class ManageLocation {
 	int count;
+	public int finalCount;
+	
 	WebDriver driver;
 	GeneralUtilities gu=new GeneralUtilities();
 	
@@ -39,6 +41,7 @@ public class ManageLocation {
     			count++;
     		}
     	}
+    	finalCount=count;
     	return count;
     }
     

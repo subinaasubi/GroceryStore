@@ -14,6 +14,8 @@ import utilities.GeneralUtilities;
 public class ManageOrders {
 	int count=0;
 	WebDriver driver;
+	public String firstOrder;
+	public String paymntM;
 	GeneralUtilities gu=new GeneralUtilities();
 
 	public ManageOrders(WebDriver driver) {
@@ -37,10 +39,14 @@ public class ManageOrders {
 	WebElement status;
 	@FindBy(xpath = "//input[@id='od']")
 	WebElement orderId;
+	
 	@FindBy(xpath = "//tbody/tr/td[1]")
 	WebElement tableOrderId;
-	@FindBy(xpath = "//tbody/tr/td[5]")
-	WebElement codPM;
+	@FindBy(xpath = "//tbody/tr[1]/td[5]")
+	WebElement paymntMode;
+	
+	@FindBy(xpath = "//tbody/tr[1]/td[1]")
+	WebElement firstOrderId;
 
 	public boolean compareAllValuesOfColumn() {
 		gu.clickOnElement(manageOrders);
@@ -68,8 +74,9 @@ public class ManageOrders {
 	
 	public String searchUsingOrderId() {
 		gu.clickOnElement(manageOrders);
+		firstOrder=firstOrderId.getText();
 		gu.clickOnElement(searchBar);
-		gu.sendText(orderId, "363");
+		gu.sendText(orderId, firstOrder);
 		gu.scrollToTheElement(tableOrderId, driver);
 		
 		return gu.getElementText(tableOrderId);
@@ -77,11 +84,8 @@ public class ManageOrders {
 	}
 	
 	public String getPaymentModeFromTable() {
-	/*	gu.clickOnElement(manageOrders);
-		gu.clickOnElement(searchBar);
-		gu.sendText(orderId, "363");
-		gu.scrollToTheElement(tableOrderId, driver);*/
-		return gu.getElementText(codPM);
+	    paymntM=gu.getElementText(paymntMode);
+		return paymntM;
 	}
 
 }

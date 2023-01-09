@@ -18,7 +18,7 @@ public class ManageLocationTestCases extends BaseClass{
 		ml=new ManageLocation(driver);
 		
 		int actualCount=ml.getActiveStatus();
-	    int expectedCount=15;
+	    int expectedCount=ml.finalCount;
 	    Assert.assertEquals(actualCount, expectedCount,Constant.COUNT_ERROR);
   }
   

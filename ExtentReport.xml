@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="My Extent Report Suite">
+	<listeners>
+		<listener class-name="utilities.ExtendReportUtility" />
+	</listeners>
+
+	<test name="My Test">
+		<parameter name="Browser" value="chrome"></parameter>
+		<classes>
+			<class name="testCases.LoginTestCase" />
+			<class name="testCases.DashboardTestCase" />
+			<class name="testCases.ManageLocationTestCases" />
+			<class name="testCases.ManageDeliveryBoyTestCases" />
+			<class name="testCases.ManageOrdersTestCases" />
+			<class name="testCases.ManageProductTestCases" />
+			<class name="testCases.MobileSliderTestCases" />
+			<class name="testCases.PushNotificationsTestCases" />
+			<class name="testCases.AdminUsersTestCases" />
+		</classes>
+	</test>
+</suite>

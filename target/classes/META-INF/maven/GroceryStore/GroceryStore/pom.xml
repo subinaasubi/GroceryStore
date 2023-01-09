@@ -22,7 +22,7 @@
 				<version>2.22.2</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>TestRunner.xml</suiteXmlFile>
+						<suiteXmlFile>ExtentReport.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

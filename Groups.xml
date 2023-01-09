@@ -4,14 +4,16 @@
 </parameter>
 <groups>
 <run>
-<include name="SmokeTest">
-</include>
+<include name="SmokeTest"/>
+<include name="SanityTest"/>
+<include name="RegressionTest"/>
 </run>
 </groups>
 
 <classes>
 <class name="testCases.MobileSliderTestCases"/>
 <class name="testCases.ManageDeliveryBoyTestCases">
+
 </class>
 </classes>
 </test>

@@ -26,7 +26,7 @@ public class ManageDeliveryBoyTestCases extends BaseClass{
 		Assert.assertEquals(actualToolTipTxt , expectedToolTipTxt,Constant.toolTip_txt_error);
 	}
 
-	@Test(priority = 2,description = "new button styleproperty validation")
+	@Test(priority = 2,description = "new button styleproperty validation",groups = {"SanityTest"})
 	public void verifyTheStyleOfNewBtn() throws InterruptedException {
 		lP=new LoginPage(driver);
 		lP.presteps();
@@ -36,7 +36,7 @@ public class ManageDeliveryBoyTestCases extends BaseClass{
 		Assert.assertEquals(actualborderclr,expectedborderclr,Constant.STYLE_ERROR);
 	}
 
-	@Test(priority = 3,description = "search button validation")
+	@Test(priority = 3,description = "search button validation",groups = {"RegressionTest"})
 	public void verifySearchButtonIsClickable() {
 		lP=new LoginPage(driver);
 		lP.presteps();

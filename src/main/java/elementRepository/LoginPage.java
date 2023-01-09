@@ -42,6 +42,8 @@ public class LoginPage {
 	@FindBy(xpath = "//input[@id='remember']")
 	WebElement verificationOfRememberCheckBox;
 	
+	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
+	WebElement incorrectAlert;
 
 	public void getUserName(String username) {
 		gu.sendText(userName ,username);
@@ -58,9 +60,12 @@ public class LoginPage {
 	
  	public String profileVerification() {
 		return gu.getElementText(profileName);
-		
 	}
 
+ 	public boolean isAlertDisplayed() {
+ 		return incorrectAlert.isDisplayed();
+ 	}
+ 	
 	public String styleProperty() {
 		String color=gu.stylePropertyValidation(profileName, "color");
 		return color;

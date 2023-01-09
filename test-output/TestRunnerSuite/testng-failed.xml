@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [TestRunnerSuite]" guice-stage="DEVELOPMENT">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [TestRunnerSuite]">
   <test thread-count="5" name="MyFirstTest(failed)">
     <parameter name="Browser" value="chrome"/>
     <classes>
-      <class name="testCases.AdminUsersTestCases">
+      <class name="testCases.ManageProductTestCases">
         <methods>
-          <include name="afterMethod"/>
+          <include name="verifyTheImageFileIsSelected"/>
           <include name="beforeMethod"/>
-          <include name="validateAdminProfileWithFaker"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- testCases.AdminUsersTestCases -->
+      </class> <!-- testCases.ManageProductTestCases -->
     </classes>
   </test> <!-- MyFirstTest(failed) -->
 </suite> <!-- Failed suite [TestRunnerSuite] -->
