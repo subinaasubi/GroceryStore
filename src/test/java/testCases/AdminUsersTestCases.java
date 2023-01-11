@@ -13,7 +13,7 @@ public class AdminUsersTestCases extends BaseClass {
 	AdminUsers au;
 
 	@Test(priority = 1, description = "validating a user profile already exists while using faker class")
-	public void validateAdminProfileWithFaker() throws InterruptedException {
+	public void validateAdminProfileWithFaker()  {
 		lp = new LoginPage(driver);
 		lp.presteps();
 		au = new AdminUsers(driver);
@@ -24,7 +24,7 @@ public class AdminUsersTestCases extends BaseClass {
 	}
 
 	@Test(priority = 2, description = "validating a user profile already exists")
-	public void validateAdminProfileAlreadyExists() throws InterruptedException {
+	public void validateAdminProfileAlreadyExists()  {
 		lp = new LoginPage(driver);
 		lp.presteps();
 		au = new AdminUsers(driver);

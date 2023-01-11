@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.ExcelRead;
 import utilities.GeneralUtilities;
 //import org.testng.Assert;
+import utilities.Synchronisation;
 
 public class LoginPage {
 	WebDriver driver;

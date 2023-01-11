@@ -7,11 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 
 import utilities.GeneralUtilities;
 import utilities.RandomDataGenerationUtility;
+import utilities.Synchronisation;
 
 public class AdminUsers {
 
 	 WebDriver driver;
 	 GeneralUtilities gu=new GeneralUtilities();
+	 Synchronisation sy=new Synchronisation();
 	 
 	 public AdminUsers(WebDriver driver) {
 		 this.driver=driver;
@@ -42,11 +44,11 @@ public class AdminUsers {
 		@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
 		WebElement failAlert;
 
-		public String verifyAdminProfileWithFaker() throws InterruptedException {
+		public String verifyAdminProfileWithFaker() {
 			//gu.scrollToTheElement(adminUsers, driver);
 			
 			gu.clickOnElement(adminUsers);
-			gu.mediumDelay(2000);
+			sy.elementClickable(driver, "//a[@class='btn btn-rounded btn-danger']");
 			gu.clickToTheElement(newBtn, driver);
 			String name= RandomDataGenerationUtility.getFName();
 			gu.sendText(usernameInputBox, name);
@@ -57,9 +59,8 @@ public class AdminUsers {
 			return gu.getElementText(successAlert);
 		}
 
-		public String verifyAdminProfileAlreadyExists() throws InterruptedException {
+		public String verifyAdminProfileAlreadyExists() {
 			gu.scrollToTheElement(adminUsers, driver);
-			gu.mediumDelay(2000);
 			gu.clickToTheElement(adminUsers, driver);
 			gu.clickToTheElement(newBtn, driver);
 			gu.sendText(usernameInputBox, "Admin");

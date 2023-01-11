@@ -13,7 +13,7 @@ public class ManageProductTestCases extends BaseClass{
 	LoginPage lp;
 	ManageProduct mp;
 	
-  @Test(priority = 1,description = "verify image file is choosen")
+  @Test(priority = 1,description = "verify image file is choosen", retryAnalyzer = retryTest.RetryAnalyzer.class)
   public void verifyTheImageFileIsSelected() throws AWTException, InterruptedException {
 	  lp=new LoginPage(driver);
 	  	lp.presteps();

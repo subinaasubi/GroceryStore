@@ -3,10 +3,10 @@
 <test name="MyFirstTest">
 <parameter name="Browser" value="chrome"> </parameter>
 <classes>
-<class name="testCases.ManageProductTestCases">
+<class name="testCases.ManageDeliveryBoyTestCases">
 <methods>
 <!-- if we want to include use include tag -->
-<include name="verifyTheImageFileIsSelected"></include>
+<include name="verifyTheStyleOfNewBtn"></include>
 </methods>
 </class>
 </classes>

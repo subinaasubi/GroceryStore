@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-TestRunnerSuite">
-                    <span>C:\Users\user\eclipse-workspace\GroceryStore\IncludeExclude.xml</span>
+                    <span>C:\Users\user\eclipse-workspace\GroceryStore\TestRunner.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,12 @@
                     <div class="method-list-content passed suite-TestRunnerSuite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-TestRunnerSuite" title="testCases.ManageProductTestCases" hash-for-method="verifyTheImageFileIsSelected">verifyTheImageFileIsSelected</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-TestRunnerSuite" title="testCases.AdminUsersTestCases" hash-for-method="validateAdminProfileAlreadyExists">validateAdminProfileAlreadyExists</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestRunnerSuite" title="testCases.AdminUsersTestCases" hash-for-method="validateAdminProfileWithFaker">validateAdminProfileWithFaker</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-TestRunnerSuite -->
@@ -120,16 +125,25 @@
           <div class="suite-TestRunnerSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testCases.ManageProductTestCases</span>
+              <span class="class-name">testCases.AdminUsersTestCases</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyTheImageFileIsSelected">
-                  </a> <!-- verifyTheImageFileIsSelected -->
-                  <span class="method-name">verifyTheImageFileIsSelected</span>
+                  <a name="validateAdminProfileAlreadyExists">
+                  </a> <!-- validateAdminProfileAlreadyExists -->
+                  <span class="method-name">validateAdminProfileAlreadyExists</span>
                   <em>
-(verify image file is choosen)                  </em>
+(validating a user profile already exists)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateAdminProfileWithFaker">
+                  </a> <!-- validateAdminProfileWithFaker -->
+                  <span class="method-name">validateAdminProfileWithFaker</span>
+                  <em>
+(validating a user profile already exists while using faker class)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +151,7 @@
         </div> <!-- panel TestRunnerSuite -->
         <div panel-name="test-xml-TestRunnerSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\user\eclipse-workspace\GroceryStore\IncludeExclude.xml</span>
+            <span class="header-content">C:\Users\user\eclipse-workspace\GroceryStore\TestRunner.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -147,11 +161,7 @@
   &lt;test thread-count=&quot;5&quot; name=&quot;MyFirstTest&quot;&gt;
     &lt;parameter name=&quot;Browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testCases.ManageProductTestCases&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;verifyTheImageFileIsSelected&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testCases.ManageProductTestCases --&gt;
+      &lt;class name=&quot;testCases.AdminUsersTestCases&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- MyFirstTest --&gt;
 &lt;/suite&gt; &lt;!-- TestRunnerSuite --&gt;
@@ -191,16 +201,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyTheImageFileIsSelected')
-data.setCell(0, 2, 'testCases.ManageProductTestCases')
-data.setCell(0, 3, 8617);
+data.setCell(0, 1, 'validateAdminProfileWithFaker')
+data.setCell(0, 2, 'testCases.AdminUsersTestCases')
+data.setCell(0, 3, 4084);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'validateAdminProfileAlreadyExists')
+data.setCell(1, 2, 'testCases.AdminUsersTestCases')
+data.setCell(1, 3, 3285);
 window.suiteTableData['TestRunnerSuite']= { tableData: data, tableDiv: 'times-div-TestRunnerSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
               <div id="times-div-TestRunnerSuite">
               </div> <!-- times-div-TestRunnerSuite -->
             </div> <!-- times-div -->
@@ -215,20 +229,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-TestRunnerSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">testCases.ManageProductTestCases</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyTheVegRadioButtonIsSelected</span>
-                <br/>
-                <span class="ignored-method-name">verifyTheColorOfStyleBtn</span>
-                <br/>
-                <span class="ignored-method-name">verifyTheStockRadioBtnIsSelected</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-TestRunnerSuite" class="panel">
@@ -237,18 +240,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testCases.ManageProductTestCases</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testCases.AdminUsersTestCases</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyTheImageFileIsSelected</span>
-                <span class="method-start">5434 ms</span>
+                <span class="method-name">validateAdminProfileWithFaker</span>
+                <span class="method-start">5608 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=verifyTheImageFileIsSelected status=SUCCESS method=ManageProductTestCases.verifyThe...)</span>
-                <span class="method-start">14059 ms</span>
+                <span class="method-name">afterMethod([TestResult name=validateAdminProfileWithFaker status=SUCCESS method=AdminUsersTestCases.validateAdm...)</span>
+                <span class="method-start">9697 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(chrome)</span>
+                <span class="method-start">9852 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateAdminProfileAlreadyExists</span>
+                <span class="method-start">12748 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=validateAdminProfileAlreadyExists status=SUCCESS method=AdminUsersTestCases.validat...)</span>
+                <span class="method-start">16034 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

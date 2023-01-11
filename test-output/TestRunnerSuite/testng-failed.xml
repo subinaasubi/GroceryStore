@@ -4,13 +4,13 @@
   <test thread-count="5" name="MyFirstTest(failed)">
     <parameter name="Browser" value="chrome"/>
     <classes>
-      <class name="testCases.ManageProductTestCases">
+      <class name="testCases.AdminUsersTestCases">
         <methods>
-          <include name="verifyTheImageFileIsSelected"/>
+          <include name="validateAdminProfileAlreadyExists"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- testCases.ManageProductTestCases -->
+      </class> <!-- testCases.AdminUsersTestCases -->
     </classes>
   </test> <!-- MyFirstTest(failed) -->
 </suite> <!-- Failed suite [TestRunnerSuite] -->

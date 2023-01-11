@@ -27,47 +27,43 @@ public class Synchronisation {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(time));
 	}
 	
-	public void Elementvisible(WebDriver driver, String location) {
+	public void elementvisible(WebDriver driver, String location) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(location)));
 	}
 
-	public void clickElement(WebDriver driver, String target) {
+	public void elementClickable(WebDriver driver, String target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(target)));
 	}
-/*	public void fWait(WebDriver driver,By locator)
+	
+	public void elementSelected(WebDriver driver, String target) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeSelected(By.xpath(target)));
+	}
+	
+
+	public void checkselection(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementSelectionStateToBe(element,true));
+	}
+	
+	public void alertPresent(WebDriver driver) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.alertIsPresent());
+		
+	}
+
+	
+	
+	public void fWait(WebDriver driver,By locator)
 	{
 		Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
 				.withTimeout(Duration.ofSeconds(30))
 				.pollingEvery(Duration.ofSeconds(5))
 				.ignoring(NoSuchElementException.class);
 
-
-		WebElement foo = fluentWait.until(new Function<WebDriver, WebElement>() {
-
-			public WebElement apply(WebDriver driver) {
-
-				if(driver.findElement(locator).isDisplayed())
-				{
-					return driver.findElement(locator); 
-				} 
-				else
-					return null;
-
-			}
-		});
-	} */
-	public void selectElement(WebDriver driver, String target) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeSelected(By.xpath(target)));
-
-	}
-	public void checkselection(WebDriver driver, WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		//waits for the element to be selected
-		wait.until(ExpectedConditions.elementSelectionStateToBe(element,true));
-	}
+	} 
 	
 }
 
