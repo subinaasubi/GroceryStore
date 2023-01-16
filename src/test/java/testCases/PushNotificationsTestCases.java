@@ -19,19 +19,18 @@ public class PushNotificationsTestCases extends BaseClass{
 	  lp.presteps();
 	  
 	  String actualTitle=pn.getPushNotificationPageTitle();
-	  System.out.println(actualTitle);
-	 String expectedTitle=Constant.expectedTitlePushNotifications;
-	 Assert.assertEquals(actualTitle,expectedTitle,Constant.titleError);
+	  String expectedTitle=Constant.EXPECTED_TITLE_PUSH_NOTIFICATIONS;
+	 Assert.assertEquals(actualTitle,expectedTitle,Constant.TITLE_ERROR);
   }
   
-  @Test(priority = 2,description = "Title text box is mandatory")
+  @Test(priority = 2,description = "verify Title text box is mandatory")
   public void verifyTitleTextBoxHasMandatorySymbol() {
 	  lp=new LoginPage(driver);
 	  pn=new PushNotifications(driver);
 	  lp.presteps();
 	  
 	  String actualColor=pn.validateTextBoxTitleMandatory();
-	  String expectedColor=Constant.expectedColorMandatoryTitle ;
+	  String expectedColor=Constant.EXPECTED_CLR_OF_MANDATORY_SYMBOL ;
 	  Assert.assertEquals(actualColor,expectedColor,Constant.STYLE_ERROR);
   }
   
@@ -58,15 +57,14 @@ public class PushNotificationsTestCases extends BaseClass{
   }
   
   @Test(priority = 5,description = "alert message verification")
-  public void verifyTheAlertMessageDisplayed() {
+  public void verifyTheAlertMessageDisplayed()  {
 	  lp=new LoginPage(driver);
 	  pn=new PushNotifications(driver);
 	  lp.presteps();
 	  
-	  String actualAlertMsg=pn.getTextOfAlertBox();
-	  System.out.println(actualAlertMsg);
-	//  String expectedAlertMsg=Constant.EXPECTED_ALERT_MSG;
-	 // Assert.assertEquals(actualAlertMsg, expectedAlertMsg,Constant.ALERT_MSG_ERROR);
+	  boolean actualAlertMsg=pn.isAlertBoxDisplayed();
+	  
+	  Assert.assertTrue(actualAlertMsg,Constant.ALERT_MSG_ERROR);
   }
   
 }

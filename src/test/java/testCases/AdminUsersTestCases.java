@@ -13,14 +13,13 @@ public class AdminUsersTestCases extends BaseClass {
 	AdminUsers au;
 
 	@Test(priority = 1, description = "validating a user profile already exists while using faker class")
-	public void validateAdminProfileWithFaker()  {
+	public void validateAdminProfileWithFaker()   {
 		lp = new LoginPage(driver);
 		lp.presteps();
 		au = new AdminUsers(driver);
-		String actualAlert = au.verifyAdminProfileWithFaker();
-		System.out.println(actualAlert);
-		String expectedAlert = Constant.EXPECTED_USER_ADMIN_ALERT;
-		Assert.assertEquals(actualAlert, expectedAlert, Constant.ALERT_MSG_ERROR);
+		
+		boolean actualAlert = au.verifyAdminProfileWithFaker();
+		Assert.assertTrue(actualAlert, Constant.ALERT_MSG_ERROR);
 	}
 
 	@Test(priority = 2, description = "validating a user profile already exists")

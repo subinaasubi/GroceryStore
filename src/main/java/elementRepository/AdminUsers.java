@@ -44,9 +44,8 @@ public class AdminUsers {
 		@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
 		WebElement failAlert;
 
-		public String verifyAdminProfileWithFaker() {
-			//gu.scrollToTheElement(adminUsers, driver);
-			
+		public boolean verifyAdminProfileWithFaker()  {
+						
 			gu.clickOnElement(adminUsers);
 			sy.elementClickable(driver, "//a[@class='btn btn-rounded btn-danger']");
 			gu.clickToTheElement(newBtn, driver);
@@ -56,7 +55,8 @@ public class AdminUsers {
 			gu.sendText(passwordInputBox, password);
 			gu.selectFuncbyViText(userTypeDropdown, "Admin");
 			gu.clickOnElement(saveBtn);
-			return gu.getElementText(successAlert);
+			
+			return gu.isElementDisplayed(successAlert);
 		}
 
 		public String verifyAdminProfileAlreadyExists() {

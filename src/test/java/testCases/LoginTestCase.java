@@ -15,24 +15,27 @@ public class LoginTestCase extends BaseClass{
  
 	LoginPage lP;
 	List<String>loginList;
-	@Test
+	
+	@Test(priority = 1,description = "Direct Login and Profile verification")
 	public void verifyLoggedUsers() {
 		lP=new LoginPage(driver);
 		lP.presteps();
-		String expectedProfileName=Constant.expectedProfileName;
+		String expectedProfileName=Constant.EXPECTED_PROFILE_NAME;
 		String actualProfileName=lP.profileVerification();
-	    Assert.assertEquals(actualProfileName,expectedProfileName,Constant.loginError);
+	    Assert.assertEquals(actualProfileName,expectedProfileName,Constant.LOGIN_ERROR);
 	}
 	
-	@Test
+		
+	@Test(priority = 2,description = "verify background color of admin")
 	public void profileNameStyleValidation() {
 		lP=new LoginPage(driver);
 		lP.presteps();
 		
 		String profileColor=lP.styleProperty();
-		String expectedProfileColor=Constant.admin_Clr_Ppty;
+		String expectedProfileColor=Constant.ADMIN_CLR_PPTY;
 		Assert.assertEquals(profileColor, expectedProfileColor,Constant.STYLE_ERROR);
 	}
+	
 	
 	@DataProvider(name = "data")
 	public Object[][] getUserData(){
@@ -43,17 +46,17 @@ public class LoginTestCase extends BaseClass{
 		};
 	}
 	
-	@Test(description = "UnSuccessfull Login using dataprovider",dataProvider = "data")
+	@Test(priority = 3, description = "UnSuccessfull Login using dataprovider",dataProvider = "data")
 	public void verifyLoggedUsersWithDataProvider(String userName,String Password) {
 		lP=new LoginPage(driver);
 		lP.getUserName(userName);
 		lP.getPassWord(Password);
 		lP.clickSignin();
 	    boolean actualProfileName=lP.isAlertDisplayed();
-	    Assert.assertTrue(actualProfileName,Constant.loginError);
+	    Assert.assertTrue(actualProfileName,Constant.LOGIN_ERROR);
 	}
 	
-	@Test(description = "Remember Me checkbox Validation")
+	@Test(priority = 4, description = "verify whether Remember Me checkbox is selected")
 	public void verifyRememberMeCheckBoxIsSelected() {
 		lP=new LoginPage(driver);
 		lP.getUserName("admin");
@@ -64,12 +67,13 @@ public class LoginTestCase extends BaseClass{
 	    Assert.assertEquals(actualStatus,expectedStatus,Constant.CHECKBOX_ERROR);
 	}
 	
-	@Test
+	@Test(priority = 5,description = "Login using excel sheet", retryAnalyzer = retryTest.RetryAnalyzer.class)
 	public void excelReadLogin() {
 		lP=new LoginPage(driver);
 		loginList=lP.getLoginDetails();
-		System.out.println(loginList);
 		lP.excelSteps(loginList.get(0), loginList.get(1)); 
-		
+		String expectedProfileName=Constant.EXPECTED_PROFILE_NAME;
+		String actualProfileName=lP.profileVerification();
+		Assert.assertEquals(actualProfileName, expectedProfileName,Constant.LOGIN_ERROR);
 	}
 }

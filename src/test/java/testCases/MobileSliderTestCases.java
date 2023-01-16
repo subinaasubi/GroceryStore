@@ -19,18 +19,18 @@ public class MobileSliderTestCases extends BaseClass{
 		lp.presteps();
 
 		String actualTitle=ms.getMobileSliderTitle();
-		String expectedTitle=Constant.expectedTitleMobileSlider;
-		Assert.assertEquals(actualTitle,expectedTitle,Constant.titleError);
+		String expectedTitle=Constant.EXPECTED_TITLE_MOBILE_SLIDER;
+		Assert.assertEquals(actualTitle,expectedTitle,Constant.TITLE_ERROR);
 	}
 
-	@Test(priority = 2,description = "image displayed")
+	@Test(priority = 2,description = "verify the image is displayed")
 	public void verifyTheImageIsDisplayed() {
 		lp=new LoginPage(driver);
 		ms=new MobileSlider(driver);
 		lp.presteps();
 
 		boolean actualImgDisp=ms.isImageDisplayed();
-		Assert.assertTrue(actualImgDisp);
+		Assert.assertTrue(actualImgDisp,Constant.IMAGE_ERROR);
 	}
 
 	@Test(priority = 3,description = "check the status of item")
@@ -41,7 +41,7 @@ public class MobileSliderTestCases extends BaseClass{
 
 		String actualStatus=ms.getStatus();
 
-		String expectedStatus=Constant.expectedStatus_item;
-		Assert.assertEquals(actualStatus,expectedStatus,Constant.status_item_Error);
+		String expectedStatus=Constant.EXPECTED_STATUS;
+		Assert.assertEquals(actualStatus,expectedStatus,Constant.STATUS_ERROR);
 	}
 }

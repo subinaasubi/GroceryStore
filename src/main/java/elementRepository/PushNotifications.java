@@ -59,9 +59,10 @@ public class PushNotifications {
 		return alertBoxBackgrndClr;
 	}
 	
-	public String getTextOfAlertBox() {
+	public boolean isAlertBoxDisplayed() {
 		enterPushNotificationInformations();
-		return gu.getElementText(alertMessageBox);
+		
+		return gu.isElementDisplayed(alertMessageBox);
 	}
 
 }

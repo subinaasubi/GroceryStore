@@ -6,8 +6,8 @@
 	<test name="MyRetryTest">
 		<parameter name="Browser" value="chrome"></parameter>
 		<classes>
-			<class name="testCases.ManageProductTestCases">
-			</class>
+			<class name="testCases.ManageProductTestCases"/>
+			<class name="testCases.LoginTestCase"/>
 		</classes>
 	</test>
 </suite>

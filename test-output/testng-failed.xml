@@ -6,7 +6,7 @@
     <classes>
       <class name="testCases.AdminUsersTestCases">
         <methods>
-          <include name="validateAdminProfileAlreadyExists"/>
+          <include name="validateAdminProfileWithFaker"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
         </methods>

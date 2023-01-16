@@ -20,8 +20,7 @@ public class ManageProductTestCases extends BaseClass{
 	  	mp=new ManageProduct(driver);
 	  	
 	  	boolean actualImageUploaded=mp.isImageSelected();
-	  	System.out.println(actualImageUploaded);
-	  	Assert.assertTrue(actualImageUploaded);
+	   	Assert.assertTrue(actualImageUploaded,Constant.UPLOAD_ERROR);
   }
   
   @Test(priority = 2,description = "verify veg radio button is selected")
@@ -31,7 +30,7 @@ public class ManageProductTestCases extends BaseClass{
 	  	mp=new ManageProduct(driver);
 	  	
 	  	boolean actualVegRadioBtn=mp.isRadioBtnSelected();
-	  	Assert.assertTrue(actualVegRadioBtn);
+	  	Assert.assertTrue(actualVegRadioBtn,Constant.RADIO_BTN_ERROR);
   }
   
   @Test(priority = 3,description = "verify Stock yes radio button is selected")
@@ -41,10 +40,10 @@ public class ManageProductTestCases extends BaseClass{
 	  	mp=new ManageProduct(driver);
 	  	
 	  	boolean actualStockYesRadioBtn=mp.isStockYesRadioBtnSelected();
-	  	Assert.assertTrue(actualStockYesRadioBtn);
+	  	Assert.assertTrue(actualStockYesRadioBtn,Constant.RADIO_BTN_ERROR);
   }
   
-  @Test(priority = 4,description = "Style validation of Save button")
+  @Test(priority = 4,description = "font color validation of Save button")
   public void verifyTheColorOfStyleBtn() {
 	  lp=new LoginPage(driver);
 	  	lp.presteps();

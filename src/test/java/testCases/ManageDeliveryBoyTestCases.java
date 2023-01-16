@@ -22,8 +22,8 @@ public class ManageDeliveryBoyTestCases extends BaseClass{
 		mDB=new ManageDeliveryBoy(driver);
 
 		String actualToolTipTxt=mDB.toolTipValidation();
-		String expectedToolTipTxt=Constant.EXPECTEDSHOWDETAIL_STRING;
-		Assert.assertEquals(actualToolTipTxt , expectedToolTipTxt,Constant.toolTip_txt_error);
+		String expectedToolTipTxt=Constant.EXPECTED_SHOWDETAIL_STRING;
+		Assert.assertEquals(actualToolTipTxt , expectedToolTipTxt,Constant.TOOL_TIP_TXT_ERROR);
 	}
 
 	@Test(priority = 2,description = "new button styleproperty validation",groups = {"SanityTest"})
@@ -32,7 +32,7 @@ public class ManageDeliveryBoyTestCases extends BaseClass{
 		lP.presteps();
 		mDB=new ManageDeliveryBoy(driver);
 		String actualborderclr=mDB.newButtonStyle();
-		String expectedborderclr=Constant.newbtn_Clr_Ppty;
+		String expectedborderclr=Constant.NEWBTN_CLR_PPTY;
 		Assert.assertEquals(actualborderclr,expectedborderclr,Constant.STYLE_ERROR);
 	}
 
@@ -42,7 +42,7 @@ public class ManageDeliveryBoyTestCases extends BaseClass{
 		lP.presteps();
 		mDB=new ManageDeliveryBoy(driver);
 		boolean actualClickable=mDB.searchBtnValidation();
-		Assert.assertTrue(actualClickable);
+		Assert.assertTrue(actualClickable,Constant.BUTTON_CLICK_ERROR);
 	}
 
 	@Test(priority = 4,description = "successfull registration of delivery boy")
@@ -51,7 +51,7 @@ public class ManageDeliveryBoyTestCases extends BaseClass{
 		lP.presteps();
 		mDB=new ManageDeliveryBoy(driver);
 		boolean actualSuccessAlert=mDB.isSuccessMessageDisplayed();
-		Assert.assertTrue(actualSuccessAlert);
+		Assert.assertTrue(actualSuccessAlert,Constant.REGISTRATION_ERROR);
 	}
 	
 	@Test(priority = 5,description = "successfull deletion of delivery boy")
@@ -60,6 +60,6 @@ public class ManageDeliveryBoyTestCases extends BaseClass{
 		lP.presteps();
 		mDB=new ManageDeliveryBoy(driver);
 		boolean actualDeleteAlert=mDB.isdeliveryBoyDeleted();
-		Assert.assertTrue(actualDeleteAlert);
+		Assert.assertTrue(actualDeleteAlert,Constant.DELETE_ERROR);
 	}
 }

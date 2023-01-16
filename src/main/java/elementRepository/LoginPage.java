@@ -91,6 +91,7 @@ public class LoginPage {
     public void excelSteps(String un,String pass) {
     	gu.sendText(userName, un);
     	gu.sendText(password, pass);
+    	clickSignin();
     }
 
 }
